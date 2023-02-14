@@ -1,0 +1,28 @@
+{
+  "name": "enevti-types",
+  "version": "1.0.0",
+  "description": "💾 Typings Repo for Enevti's Projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enevtihq/enevti-types.git"
+  },
+  "keywords": [
+    "Enevti",
+    "Lisk",
+    "Typescript",
+    "NFT"
+  ],
+  "author": "enevtihq",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/enevtihq/enevti-types/issues"
+  },
+  "homepage": "https://github.com/enevtihq/enevti-types#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0"
+  }
+}
