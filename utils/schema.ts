@@ -1,21 +1,31 @@
-export interface StateSchemaFromType<T extends Record<string, unknown>> {
+export interface BaseSchemaFromType<
+  T extends Record<string, unknown>,
+  S = Record<keyof T, unknown>
+> {
+  type: string;
+  required: (keyof T)[];
+  properties: Record<keyof T, unknown> & S;
+}
+
+export interface StateSchemaFromType<
+  T extends Record<string, unknown>,
+  S = Record<keyof T, unknown>
+> extends BaseSchemaFromType<T, S> {
   $id: string;
-  type: "object";
-  required: [keyof T];
-  properties: Record<keyof T, unknown>;
   default?: T;
 }
 
-export interface AssetSchemaFromType<T extends Record<string, unknown>> {
+export interface AssetSchemaFromType<
+  T extends Record<string, unknown>,
+  S = Record<keyof T, unknown>
+> extends BaseSchemaFromType<T, S> {
   $id: string;
   title: string;
-  type: "object";
-  required: [keyof T];
-  properties: Record<keyof T, unknown>;
 }
 
-export interface AccountSchemaFromType<T extends Record<string, unknown>> {
-  type: "object";
-  properties: Record<keyof T, unknown>;
+export interface AccountSchemaFromType<
+  T extends Record<string, unknown>,
+  S = Record<keyof T, unknown>
+> extends Omit<BaseSchemaFromType<T, S>, "required"> {
   default: T;
 }
