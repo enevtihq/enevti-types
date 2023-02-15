@@ -1,3 +1,9 @@
+export interface ArraySchema<T> {
+  type: "array";
+  fieldNumber: number;
+  items: T;
+}
+
 export interface BaseSchemaFromType<
   T extends Record<string, unknown>,
   S = Record<keyof T, unknown>
