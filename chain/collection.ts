@@ -1,41 +1,32 @@
-import { NFTBase } from './nft';
-import { NFTPrice, NFTPriceAsset } from './nft/NFTPrice';
-import { Persona, PersonaAsset } from '../account/persona';
-import { NFTContent } from './nft/NFTContent';
-import { SocialProfile, SocialProfileAsset } from '../account/social';
-import { CollectionIdAsset, NFTIdAsset } from './id';
-import { NFTType } from './nft/NFTType';
-import { ActivityBase, ActivityChainBase } from './activity';
-import { MomentBase } from './moment';
+import { NFTBase } from "./nft";
+import { NFTPrice, NFTPriceAsset } from "./nft/NFTPrice";
+import { Persona, PersonaAsset } from "../account/persona";
+import { NFTContent } from "./nft/NFTContent";
+import { SocialProfile, SocialProfileAsset } from "../account/social";
+import { CollectionIdAsset, NFTIdAsset } from "./id";
+import { NFTType } from "./nft/NFTType";
+import { MomentBase } from "./moment";
+import { ActivityService } from "../service/activity";
 
 export type AllCollection = {
   items: CollectionIdAsset[];
 };
 
 export type CollectionActivityName =
-  | 'created'
-  | 'minted'
-  | 'raffled'
-  | 'secretDelivered'
-  | 'videoCallAnswered'
-  | 'videoCallRejected'
-  | 'momentCreated';
+  | "created"
+  | "minted"
+  | "raffled"
+  | "secretDelivered"
+  | "videoCallAnswered"
+  | "videoCallRejected"
+  | "momentCreated";
 
-export type CollectionActivity = Omit<ActivityBase, 'name'> & {
+export type CollectionActivity = Omit<ActivityService, "name"> & {
   name: CollectionActivityName;
   nfts: NFTBase[];
 };
 
 export type CollectionActivityAsset = Buffer;
-
-export type CollectionActivityChainItems = Omit<ActivityChainBase, 'name'> & {
-  name: CollectionActivityName;
-  nfts: NFTIdAsset[];
-};
-
-export type CollectionActivityChain = {
-  items: CollectionActivityChainItems[];
-};
 
 export type CollectionBase = {
   id: string;
@@ -79,7 +70,16 @@ export interface Collection extends CollectionBase {
 export interface CollectionAsset
   extends Omit<
     Collection,
-    'creator' | 'id' | 'minted' | 'activity' | 'social' | 'stat' | 'minting' | 'createdOn' | 'moment' | 'liked'
+    | "creator"
+    | "id"
+    | "minted"
+    | "activity"
+    | "social"
+    | "stat"
+    | "minting"
+    | "createdOn"
+    | "moment"
+    | "liked"
   > {
   id: CollectionIdAsset;
   creator: PersonaAsset;

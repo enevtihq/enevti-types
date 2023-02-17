@@ -1,28 +1,20 @@
-import { Persona, PersonaAsset } from '../account/persona';
-import { ActivityBase, ActivityChainBase } from './activity';
-import { MomentIdAsset, NFTIdAsset } from './id';
-import { NFTBase } from './nft';
-import { NFTContent } from './nft/NFTContent';
+import { Persona, PersonaAsset } from "../account/persona";
+import { ActivityService } from "../service/activity";
+import { MomentIdAsset, NFTIdAsset } from "./id";
+import { NFTBase } from "./nft";
+import { NFTContent } from "./nft/NFTContent";
 
 export type AllMoment = {
   items: MomentIdAsset[];
 };
 
-export type MomentActivityName = 'minted';
+export type MomentActivityName = "minted";
 
-export type MomentActivity = Omit<ActivityBase, 'name'> & {
+export type MomentActivity = Omit<ActivityService, "name"> & {
   name: MomentActivityName;
 };
 
 export type MomentActivityAsset = Buffer;
-
-export type MomentActivityChainItems = Omit<ActivityChainBase, 'name'> & {
-  name: MomentActivityName;
-};
-
-export type MomentActivityChain = {
-  items: MomentActivityChainItems[];
-};
 
 export type MomentAtAsset = {
   moment: MomentIdAsset[];
@@ -52,7 +44,15 @@ export type MomentBase = Moment;
 export interface MomentAsset
   extends Omit<
     Moment,
-    'id' | 'nftId' | 'activity' | 'owner' | 'creator' | 'createdOn' | 'textPlain' | 'nft' | 'liked'
+    | "id"
+    | "nftId"
+    | "activity"
+    | "owner"
+    | "creator"
+    | "createdOn"
+    | "textPlain"
+    | "nft"
+    | "liked"
   > {
   id: MomentIdAsset;
   nftId: NFTIdAsset;

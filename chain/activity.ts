@@ -1,17 +1,18 @@
-import { Persona, PersonaAsset } from '../account/persona';
-import { NFTPrice, NFTPriceAsset } from './nft/NFTPrice';
-
-export type ActivityBase = {
-  transaction: string;
-  name: string;
-  date: number;
-  to: Persona;
-  value: NFTPrice;
+export type ActivityItemChain = {
+  key: string;
+  type: string;
+  previousActivityId: Buffer;
+  transaction: Buffer;
+  height: number;
+  diff: string;
+  patch: string[];
+  payload: Buffer;
 };
 
-export type ActivityChainBase = Omit<ActivityBase, 'transaction' | 'to' | 'value' | 'date'> & {
-  transaction: Buffer;
-  to: PersonaAsset;
-  value: NFTPriceAsset;
-  date: bigint;
+export type ActivityListChain = {
+  items: Buffer[];
+};
+
+export type ActivityGenesisChain = {
+  state: string;
 };

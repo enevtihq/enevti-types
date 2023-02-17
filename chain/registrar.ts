@@ -1,8 +1,8 @@
-export type RegistrarAsset = {
+export type RegistrarChain = {
   id: Buffer;
 };
 
-export type BlockRegisrarAsset = {
+export type BlockRegisrarChain = {
   items: {
     name: string;
     payload: string;

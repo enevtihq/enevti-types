@@ -1,12 +1,17 @@
-import { NFTBase } from '../chain/nft';
-import { CollectionBase } from '../chain/collection';
-import { SocialProfile } from './social';
-import { CollectionIdAsset, MomentIdAsset, NFTIdAsset } from '../chain/id';
-import { Persona, PersonaAsset } from './persona';
-import { ActivityBase, ActivityChainBase } from '../chain/activity';
-import { MomentBase } from '../chain/moment';
+import { NFTBase } from "../chain/nft";
+import { CollectionBase } from "../chain/collection";
+import { SocialProfile } from "./social";
+import { CollectionIdAsset, MomentIdAsset, NFTIdAsset } from "../chain/id";
+import { Persona } from "./persona";
+import { MomentBase } from "../chain/moment";
+import { ActivityService } from "../service/activity";
 
-export type ProfileAPIVersion = { owned: number; onSale: number; momentCreated: number; collection: number };
+export type ProfileAPIVersion = {
+  owned: number;
+  onSale: number;
+  momentCreated: number;
+  collection: number;
+};
 
 export type ProfileAPIResponse = Profile & {
   persona?: Persona;
@@ -93,19 +98,19 @@ export type CreaFiAccountProps = {
 };
 
 export type ProfileActivityName =
-  | 'tokenSent'
-  | 'tokenReceived'
-  | 'registerUsername'
-  | 'addStake'
-  | 'selfStake'
-  | 'createNFT'
-  | 'mintNFT'
-  | 'NFTSale'
-  | 'deliverSecret'
-  | 'winRaffle'
-  | 'momentCreated';
+  | "tokenSent"
+  | "tokenReceived"
+  | "registerUsername"
+  | "addStake"
+  | "selfStake"
+  | "createNFT"
+  | "mintNFT"
+  | "NFTSale"
+  | "deliverSecret"
+  | "winRaffle"
+  | "momentCreated";
 
-export type ProfileActivity = Omit<ActivityBase, 'name'> & {
+export type ProfileActivity = Omit<ActivityService, "name"> & {
   name: ProfileActivityName;
   from: Persona;
   payload: Record<string, unknown>;
@@ -114,47 +119,31 @@ export type ProfileActivity = Omit<ActivityBase, 'name'> & {
 
 export type ProfileActivityAsset = Buffer;
 
-export type ProfileActivityChainItems = Omit<ActivityChainBase, 'name'> & {
-  name: ProfileActivityName;
-  from: PersonaAsset;
-  payload: Buffer;
-};
-
-export type ProfileActivityChain = {
-  items: ProfileActivityChainItems[];
-};
-
 export type EngagementActivityName =
-  | 'likeNft'
-  | 'likeCollection'
-  | 'likeComment'
-  | 'likeReply'
-  | 'likeMoment'
-  | 'likeCommentClubs'
-  | 'likeReplyClubs'
-  | 'commentNft'
-  | 'commentCollection'
-  | 'commentMoment'
-  | 'replyComment'
-  | 'replyCommentClubs'
-  | 'commentCollectionClubs'
-  | 'commentNftClubs'
-  | 'commentMomentClubs'
-  | 'setVideoCallAnswered'
-  | 'setVideoCallRejected';
+  | "likeNft"
+  | "likeCollection"
+  | "likeComment"
+  | "likeReply"
+  | "likeMoment"
+  | "likeCommentClubs"
+  | "likeReplyClubs"
+  | "commentNft"
+  | "commentCollection"
+  | "commentMoment"
+  | "replyComment"
+  | "replyCommentClubs"
+  | "commentCollectionClubs"
+  | "commentNftClubs"
+  | "commentMomentClubs"
+  | "setVideoCallAnswered"
+  | "setVideoCallRejected";
 
-export type EngagementActivity = Omit<ActivityBase, 'name' | 'to' | 'value'> & {
+export type EngagementActivity = Omit<
+  ActivityService,
+  "name" | "to" | "value"
+> & {
   name: EngagementActivityName;
   target: Record<string, unknown>;
 };
 
 export type EngagementActivityAsset = Buffer;
-
-export type EngagementActivityChainItems = Omit<ActivityChainBase, 'name' | 'to' | 'value'> & {
-  name: EngagementActivityName;
-  target: Buffer;
-};
-
-export type EngagementActivityChain = {
-  items: EngagementActivityChainItems[];
-};
