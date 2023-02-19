@@ -1,9 +1,9 @@
 export type LikeSentChain = {
   total: number;
-  items: {
-    identifier: string;
-    count: number;
-  }[];
+};
+
+export type LikeSentTargetChain = {
+  target: Buffer[];
 };
 
 export type LikedChain = {
