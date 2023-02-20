@@ -3,5 +3,5 @@ export type CountChain = {
 };
 
 export type CountItemChain = {
-  target: Buffer[];
+  items: Buffer[];
 };
