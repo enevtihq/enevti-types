@@ -1,3 +1,7 @@
+export type NewRegistrarEvent = {
+  payload: string;
+};
+
 export type GetRegistrarParam = {
   identifier: string;
   value: string;

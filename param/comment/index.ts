@@ -2,6 +2,10 @@ import { AddCommentProps } from "../../asset/comment/add_comment_asset";
 import { CommentItemChain } from "../../chain/comment";
 import { ReducerHandler } from "../../utils/reducerHandler";
 
+export type NewCommentEvent = {
+  id: Buffer;
+};
+
 export type GetCommentParam = {
   id: Buffer;
 };

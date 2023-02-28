@@ -1,5 +1,11 @@
 import { ReducerHandler } from "../../utils/reducerHandler";
 
+export type NewLikeEvent = {
+  identifier: string;
+  id: string;
+  senderAddress: Buffer;
+};
+
 export type GetLikeParam = {
   identifier: string;
   target: string;

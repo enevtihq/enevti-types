@@ -1,5 +1,13 @@
 import { ActivityItemChain } from "../../chain/activity";
 
+export type BlockWithNewActivityEvent = {
+  height: number;
+};
+
+export type NewActivityEvent = {
+  id: Buffer;
+};
+
 export type GetActivityParam = {
   id: Buffer;
 };
