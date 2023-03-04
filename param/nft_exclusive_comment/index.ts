@@ -24,4 +24,4 @@ export type AddExclusiveReplyParam = AddCommentParam;
 
 export type AddExclusiveCommentPayload = AddCommentPayload;
 
-export type AddExclusiveReplyPayload = AddCommentPayload;
+export type AddExclusiveReplyPayload = Omit<AddCommentPayload, "identifier">;
