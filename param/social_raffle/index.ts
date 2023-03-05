@@ -9,3 +9,7 @@ export type NewRaffledEvent = {
   address: Buffer;
   total: number;
 };
+
+export type GetRecordParam = {
+  height: number;
+};
