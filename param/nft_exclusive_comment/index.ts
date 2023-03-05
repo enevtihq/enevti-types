@@ -16,7 +16,7 @@ export type GetExclusiveReplyParam = GetCommentParam;
 
 export type GetExclusiveCommentsParam = GetCommentsParam;
 
-export type GetExclusiveRepliesParam = GetCommentsParam;
+export type GetExclusiveRepliesParam = GetCommentParam;
 
 export type AddExclusiveCommentParam = AddCommentParam;
 
