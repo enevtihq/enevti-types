@@ -9,7 +9,7 @@ export type SocialRaffleRegistrarItem = {
   candidate: Buffer[];
 };
 
-export type SocialRaffleRecord = {
+export type SocialRaffleBlockRecord = {
   items: {
     id: Buffer;
     winner: Buffer;
