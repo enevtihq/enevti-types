@@ -1,5 +1,5 @@
 export type CommentItemChain = {
-  date: number;
+  date: bigint;
   creator: Buffer;
   cid: string;
   target: Buffer;

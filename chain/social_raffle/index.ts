@@ -16,3 +16,8 @@ export type SocialRaffleRecord = {
     raffled: Buffer[];
   }[];
 };
+
+export type SocialRaffleAddressRecord = {
+  height: number;
+  collection: Buffer;
+};
