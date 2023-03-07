@@ -1,4 +1,4 @@
-export type NewBlockRecord = {
+export type NewBlockRecordEvent = {
   height: number;
 };
 
