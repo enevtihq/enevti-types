@@ -21,3 +21,7 @@ export type SocialRaffleAddressRecord = {
   height: number;
   collection: Buffer;
 };
+
+export type SocialRaffleCollectionRecord = {
+  height: number;
+};
