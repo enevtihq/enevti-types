@@ -22,6 +22,7 @@ export type SocialRaffleAddressRecord = {
   collection: Buffer;
 };
 
-export type SocialRaffleCollectionRecord = {
-  height: number;
+export type SocialRaffleCollectionChain = {
+  activated: boolean;
+  raffledCount: number;
 };
