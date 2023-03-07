@@ -1,12 +1,12 @@
-import { NFTBase } from '../chain/nft';
-import { NFTPrice } from '../chain/nft/NFTPrice';
-import { Persona } from '../account/persona';
-import { NFTType } from '../chain/nft/NFTType';
-import { MomentBase } from '../chain/moment';
-import { ProfileAPIResponse } from '../account/profile';
+import { NFTBase } from "../../chain/nft";
+import { NFTPrice } from "../../chain/nft/NFTPrice";
+import { Persona } from "../../account/persona";
+import { NFTType } from "../../chain/nft/NFTType";
+import { MomentBase } from "../../chain/moment";
+import { ProfileAPIResponse } from "../../account/profile";
 
 export interface FeedItem {
-  type: NFTType | 'nft';
+  type: NFTType | "nft";
   id: string;
   like: number;
   liked: boolean;

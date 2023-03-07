@@ -1,5 +1,5 @@
-import { Persona } from '../account/persona';
-import { NFTActivityName } from '../chain/nft/NFTActivity';
+import { Persona } from "../../account/persona";
+import { NFTActivityName } from "../../chain/nft/NFTActivity";
 
 export type StartVideoCallHandlerPayload = {
   id: string;
@@ -12,7 +12,7 @@ export type StartVideoCallHandlerPayload = {
 export type StartVideoCallPayload = {
   uuid: string;
   data: StartVideoCallHandlerPayload;
-  caller: 'creator' | 'owner';
+  caller: "creator" | "owner";
 };
 
 export type StartVideoCallPayloadIOS = {
@@ -20,20 +20,20 @@ export type StartVideoCallPayloadIOS = {
   callerName: string;
   handle: string;
   data: StartVideoCallHandlerPayload;
-  caller: 'creator' | 'owner';
+  caller: "creator" | "owner";
 };
 
 export type CallStatus =
-  | 'authorizing'
-  | 'starting'
-  | 'ringing'
-  | 'connected'
-  | 'answered'
-  | 'rejected'
-  | 'ended'
-  | 'disconnected'
-  | 'error'
-  | 'exited';
+  | "authorizing"
+  | "starting"
+  | "ringing"
+  | "connected"
+  | "answered"
+  | "rejected"
+  | "ended"
+  | "disconnected"
+  | "error"
+  | "exited";
 
 export type CallStartedParam = {
   emitter: string;
@@ -81,7 +81,7 @@ export type CallEndedParam = {
 };
 
 export type OwnerRespondToSetStatusParam = {
-  respond: 'accepted' | 'declined' | 'error';
+  respond: "accepted" | "declined" | "error";
 };
 
 export type VideoCallStatusChangedParams = NFTActivityName;

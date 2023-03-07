@@ -1,5 +1,5 @@
-import { Persona, PersonaService } from '../account/persona';
-import { ProfileActivity } from '../account/profile';
+import { Persona, PersonaService } from "../../account/persona";
+import { ProfileActivity } from "../../account/profile";
 
 export type WalletStaked = { persona: Persona; amount: string };
 
