@@ -1,19 +1,18 @@
-import { NFTRarity } from './NFTRarity';
-import { NFTType } from './NFTType';
-import { NFTTemplateData } from './NFTTemplate';
-import { NFTUtility } from './NFTUtility';
-import { NFTPrice, NFTPriceAsset } from './NFTPrice';
-import { Persona, PersonaAsset } from '../../account/persona';
-import { NFTPartition, NFTPartitionAsset } from './NFTPartition';
-import { NFTRedeem, NFTRedeemAsset } from './NFTRedeem';
-import { NFTRoyalty } from './NFTRoyalty';
-import { NFTActivity } from './NFTActivity';
-import { NFTContent } from './NFTContent';
-import { CollectionIdAsset, NFTIdAsset } from '../id';
-import { MomentBase } from '../moment';
+import { NFTRarity } from "./NFTRarity";
+import { NFTType } from "./NFTType";
+import { NFTTemplateData } from "./NFTTemplate";
+import { NFTUtility } from "./NFTUtility";
+import { NFTPrice, NFTPriceAsset } from "./NFTPrice";
+import { Persona, PersonaAsset } from "../../account/persona";
+import { NFTPartition, NFTPartitionAsset } from "./NFTPartition";
+import { NFTRedeem, NFTRedeemAsset } from "./NFTRedeem";
+import { NFTRoyalty } from "./NFTRoyalty";
+import { NFTActivity } from "./NFTActivity";
+import { NFTContent } from "./NFTContent";
+import { MomentBase } from "../moment";
 
 export type AllNFT = {
-  items: NFTIdAsset[];
+  items: Buffer[];
 };
 
 export type NFTBase = {
@@ -51,22 +50,22 @@ export interface NFT extends NFTBase {
 export interface NFTAsset
   extends Omit<
     NFT,
-    | 'id'
-    | 'collectionId'
-    | 'owner'
-    | 'creator'
-    | 'activity'
-    | 'template'
-    | 'redeem'
-    | 'price'
-    | 'partition'
-    | 'networkIdentifier'
-    | 'createdOn'
-    | 'moment'
-    | 'liked'
+    | "id"
+    | "collectionId"
+    | "owner"
+    | "creator"
+    | "activity"
+    | "template"
+    | "redeem"
+    | "price"
+    | "partition"
+    | "networkIdentifier"
+    | "createdOn"
+    | "moment"
+    | "liked"
   > {
-  id: NFTIdAsset;
-  collectionId: CollectionIdAsset;
+  id: Buffer;
+  collectionId: Buffer;
   owner: PersonaAsset;
   creator: PersonaAsset;
   template: string;

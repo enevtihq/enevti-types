@@ -1,7 +1,5 @@
-import { TemplateIdAsset } from '../id';
-
 export type AllNFTTemplate = {
-  items: TemplateIdAsset[];
+  items: string[];
 };
 
 export interface TemplateArgs {
@@ -14,19 +12,19 @@ export interface TemplateArgs {
 
 export type NFTTemplateItem = {
   type:
-    | 'utility-background'
-    | 'utility-icon'
-    | 'utility-label'
-    | 'partition-icon'
-    | 'partition-label'
-    | 'data'
-    | 'data-box'
-    | 'box'
-    | 'rarity-icon'
-    | 'rarity-rank'
-    | 'rarity-percent'
-    | 'name'
-    | 'serial'
+    | "utility-background"
+    | "utility-icon"
+    | "utility-label"
+    | "partition-icon"
+    | "partition-label"
+    | "data"
+    | "data-box"
+    | "box"
+    | "rarity-icon"
+    | "rarity-rank"
+    | "rarity-percent"
+    | "name"
+    | "serial"
     | string;
   args: TemplateArgs;
 };

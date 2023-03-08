@@ -3,13 +3,12 @@ import { NFTPrice, NFTPriceAsset } from "./nft/NFTPrice";
 import { Persona, PersonaAsset } from "../account/persona";
 import { NFTContent } from "./nft/NFTContent";
 import { SocialProfile, SocialProfileAsset } from "../account/social";
-import { CollectionIdAsset, NFTIdAsset } from "./id";
 import { NFTType } from "./nft/NFTType";
 import { MomentBase } from "./moment";
 import { ActivityService } from "../service/activity";
 
 export type AllCollection = {
-  items: CollectionIdAsset[];
+  items: Buffer[];
 };
 
 export type CollectionActivityName =
@@ -81,9 +80,9 @@ export interface CollectionAsset
     | "moment"
     | "liked"
   > {
-  id: CollectionIdAsset;
+  id: Buffer;
   creator: PersonaAsset;
-  minted: NFTIdAsset[];
+  minted: Buffer[];
   social: SocialProfileAsset;
   createdOn: bigint;
   stat: {
@@ -94,8 +93,8 @@ export interface CollectionAsset
     volume: NFTPriceAsset;
   };
   minting: {
-    total: NFTIdAsset[];
-    available: NFTIdAsset[];
+    total: Buffer[];
+    available: Buffer[];
     expire: number;
     price: NFTPriceAsset;
   };

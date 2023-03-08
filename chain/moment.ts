@@ -1,11 +1,10 @@
 import { Persona, PersonaAsset } from "../account/persona";
 import { ActivityService } from "../service/activity";
-import { MomentIdAsset, NFTIdAsset } from "./id";
 import { NFTBase } from "./nft";
 import { NFTContent } from "./nft/NFTContent";
 
 export type AllMoment = {
-  items: MomentIdAsset[];
+  items: Buffer[];
 };
 
 export type MomentActivityName = "minted";
@@ -17,7 +16,7 @@ export type MomentActivity = Omit<ActivityService, "name"> & {
 export type MomentActivityAsset = Buffer;
 
 export type MomentAtAsset = {
-  moment: MomentIdAsset[];
+  moment: Buffer[];
 };
 
 export interface Moment {
@@ -54,8 +53,8 @@ export interface MomentAsset
     | "nft"
     | "liked"
   > {
-  id: MomentIdAsset;
-  nftId: NFTIdAsset;
+  id: Buffer;
+  nftId: Buffer;
   owner: PersonaAsset;
   creator: PersonaAsset;
   createdOn: bigint;
