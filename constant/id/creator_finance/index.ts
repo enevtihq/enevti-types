@@ -1,0 +1,1 @@
+export const CREATOR_FINANCE_MODULE_ID = 1002;

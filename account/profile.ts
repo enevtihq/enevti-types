@@ -1,7 +1,6 @@
 import { NFTBase } from "../chain/nft";
 import { CollectionBase } from "../chain/collection";
 import { SocialProfile } from "./social";
-import { CollectionIdAsset, MomentIdAsset, NFTIdAsset } from "../chain/id";
 import { Persona } from "./persona";
 import { MomentBase } from "../chain/moment";
 import { ActivityService } from "../service/activity";
@@ -83,11 +82,11 @@ export type RedeemableNFTAccountProps = {
     likeSent: number;
     commentSent: number;
     commentClubsSent: number;
-    owned: NFTIdAsset[];
-    onSale: NFTIdAsset[];
-    momentCreated: MomentIdAsset[];
-    collection: CollectionIdAsset[];
-    pending: NFTIdAsset[];
+    owned: Buffer[];
+    onSale: Buffer[];
+    momentCreated: Buffer[];
+    collection: Buffer[];
+    pending: Buffer[];
   };
 };
 

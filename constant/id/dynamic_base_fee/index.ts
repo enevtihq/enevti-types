@@ -1,0 +1,1 @@
+export const DYNAMIC_BASE_FEE_MODULE_ID = 1003;
