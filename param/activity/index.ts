@@ -23,8 +23,8 @@ export type GetActivityGenesisParam = {
 };
 
 export type AddActivityParam = {
-  oldState: Record<string, unknown>;
-  newState: Record<string, unknown>;
+  oldState?: Record<string, unknown>;
+  newState?: Record<string, unknown>;
   payload: AddActivityPayload;
 };
 
