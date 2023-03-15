@@ -15,3 +15,5 @@ export type AddCountParam = {
   address: Buffer;
   item: Buffer;
 };
+
+export type RemoveCountParam = AddCountParam;
