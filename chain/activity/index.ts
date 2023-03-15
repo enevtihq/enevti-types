@@ -6,6 +6,7 @@ export type ActivityItemChain = {
   height: number;
   diff: string;
   patch: string[];
+  amount: bigint;
   payload: Buffer;
 };
 
