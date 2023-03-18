@@ -36,42 +36,6 @@ export type Profile = {
   momentCreated: MomentBase[];
 };
 
-export type RedeemableNFTAccountStatsChain = {
-  nftSold: Buffer[];
-  treasuryAct: Buffer[];
-  raffled: Buffer[];
-  momentSlot: Buffer[];
-  serveRate: {
-    score: number;
-    items: {
-      id: Buffer;
-      nonce: number;
-      owner: Buffer;
-      status: 0 | 1;
-    }[];
-  };
-  likeSent: {
-    total: number;
-    nft: Buffer[];
-    moment: Buffer[];
-    collection: Buffer[];
-    comment: Buffer[];
-    reply: Buffer[];
-    commentClubs: Buffer[];
-    replyClubs: Buffer[];
-  };
-  commentSent: {
-    total: number;
-    comment: Buffer[];
-    reply: Buffer[];
-  };
-  commentClubsSent: {
-    total: number;
-    comment: Buffer[];
-    reply: Buffer[];
-  };
-};
-
 export type RedeemableNFTAccountProps = {
   redeemableNft: {
     nftSold: number;

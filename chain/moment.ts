@@ -3,6 +3,10 @@ import { ActivityService } from "../service/activity";
 import { NFTBase } from "./nft";
 import { NFTContent } from "./nft/NFTContent";
 
+export type MomentSlotChain = {
+  items: Buffer[];
+};
+
 export type AllMoment = {
   items: Buffer[];
 };
