@@ -22,13 +22,13 @@ export type GetActivityGenesisParam = {
   key: string;
 };
 
-export type AddActivityParam = {
-  oldState?: Record<string, unknown>;
-  newState?: Record<string, unknown>;
-  payload: AddActivityPayload;
-};
+export type AddActivityParam = AddActivityPayload;
 
 export type AddActivityPayload = Omit<
   ActivityItemChain,
   "previousActivityId" | "diff" | "patch" | "transaction" | "height" | "payload"
-> & { transaction?: Buffer; payload?: Buffer };
+> & {
+  transaction?: Buffer;
+  payload?: Buffer;
+  state?: { old: Record<string, unknown>; new: Record<string, unknown> };
+};
