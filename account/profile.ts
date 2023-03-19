@@ -1,9 +1,19 @@
 import { NFTBase } from "../chain/nft";
 import { CollectionBase } from "../chain/collection";
 import { SocialProfile } from "./social";
-import { Persona } from "./persona";
+import { Persona, PersonaAccountProps } from "./persona";
 import { MomentBase } from "../chain/moment";
 import { ActivityService } from "../service/activity";
+import { TokenAccount } from "../utils/token";
+import { DPOSAccountProps } from "../utils/dpos";
+import { Account } from "../utils/account";
+
+export type AccountChain = CreaFiAccountProps &
+  PersonaAccountProps &
+  Account &
+  DPOSAccountProps &
+  RedeemableNFTAccountProps &
+  TokenAccount & { sequence: { nonce: bigint } };
 
 export type ProfileAPIVersion = {
   owned: number;
