@@ -1,4 +1,4 @@
-import { ReducerHandler } from "../../utils/reducerHandler";
+import { ReducerHandler } from "../../../utils/reducerHandler";
 
 export type NewLikeEvent = {
   identifier: string;
@@ -22,3 +22,11 @@ export type AddLikeParam = {
   target: string;
   senderAddress: Buffer;
 };
+
+export type NewExclusiveLikeEvent = NewLikeEvent;
+
+export type GetExclusiveLikeParam = GetLikeParam;
+
+export type GetExclusiveLikedParam = GetLikedParam;
+
+export type AddExclusiveLikeParam = AddLikeParam;
