@@ -1,3 +1,5 @@
+import { ReducerHandler } from "../../utils/reducerHandler";
+
 export type NewBlockRecordEvent = {
   height: number;
 };
@@ -13,4 +15,9 @@ export type SetCollectionRaffleConfig = {
 
 export type GetRecordParam = {
   height: number;
+};
+
+export type GetCollectionEligibilityParam = {
+  reducerHandler: ReducerHandler;
+  id: Buffer;
 };
